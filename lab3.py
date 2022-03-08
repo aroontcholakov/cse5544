@@ -5,7 +5,7 @@ import seaborn as sns
 import numpy as np
 import altair as alt
 
-df_data = pd.read_csv('<https://github.com/aroontcholakov/cse5544/blob/5bff17de181cf117ac0dcfea158ea56aff1dca6a/CSE5544.Lab1.ClimateData.csv>', sep=',')
+df_data = pd.read_csv('https://github.com/aroontcholakov/cse5544/blob/5bff17de181cf117ac0dcfea158ea56aff1dca6a/CSE5544.Lab1.ClimateData.csv', sep=',')
 df_data = df_data.drop(columns=['Non-OECD Economies'])
 df_data = df_data[df_data['Country\\year'].apply(lambda x: 'OECD' not in x and 'European Union' not in x)]
 cols = df_data.columns.drop('Country\\year')
