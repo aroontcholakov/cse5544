@@ -20,7 +20,7 @@ heatmap = alt.Chart(data).mark_rect().encode(
     alt.X('year:O'),
     alt.Y('Country:N', sort='ascending'),
     alt.Color('value:Q', scale=alt.Scale(scheme='inferno')),
-    size='value:Q',
+#     size='value:Q',
     tooltip=['value']
 ).properties(
     title={
@@ -34,8 +34,8 @@ heatmap = alt.Chart(data).mark_rect().encode(
 )
 
 st.altair_chart(heatmap, use_container_width=False)
-# st.text("")
 
+st.write("The heatmap shows each country and year and the color is encoded to the inferno color map. ")
 
 scatterplot = alt.Chart(data).mark_circle().encode(
     alt.X('year:O'),
@@ -50,4 +50,4 @@ scatterplot = alt.Chart(data).mark_circle().encode(
 
 st.altair_chart(scatterplot, use_container_width=True)
 
-st.write("Here the scatterplot has a cyclical color map, reversed Y-axis with no labels, and the size corresponding to Country name. What the color legend does not show is values close to 0 are also mapped to red, so the high values and low values are both red which can be confusing. I included all the data that is present in the heatmap above, but with the y-axis is reversed so the higher emission values, like 12,000,000, are closer to the x-axis and smaller values are further away.")
+st.write("The scatterplot has a cyclical color map, reversed Y-axis with no labels, and the size corresponding to Country name. What the color legend does not show is values close to 0 are also mapped to red, so the high values and low values are both red is confusing. I included all the data that is present in the heatmap above, but with the y-axis is reversed so the higher emission values, like 12,000,000, are closer to the x-axis and smaller values are further away. The size is encoded to the name of the Country and the legend is disabled, so it appears that the countries at the top have a larger mark size and higher position which is conventionally associated with bigger values, but that is not the case. When hovering over the points, the tooltip box only shows the country name which is not helpful in reading the graph when an axis is not labeled. Lastly, the opacity is the emission value which lets the larger marks bleed into one another, making the individual data points harder to read. The title is not very descriptive.")
