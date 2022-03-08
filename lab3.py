@@ -50,4 +50,4 @@ scatterplot = alt.Chart(data).mark_circle().encode(
 
 st.altair_chart(scatterplot, use_container_width=True)
 
-st.text("Here the scatterplot has a cyclical color map, reversed Y-axis with no labels, and the size corresponding to Country name. What the color legend does not show is values close to 0 are also mapped to red, so the high values and low values are both red which can be confusing. I included all the data that is present in the heatmap above, but with the y-axis is reversed so the higher emission values, like 12,000,000, are closer to the x-axis and smaller values are further away.")
+st.write("Here the scatterplot has a cyclical color map, reversed Y-axis with no labels, and the size corresponding to Country name. What the color legend does not show is values close to 0 are also mapped to red, so the high values and low values are both red which can be confusing. I included all the data that is present in the heatmap above, but with the y-axis is reversed so the higher emission values, like 12,000,000, are closer to the x-axis and smaller values are further away.")
